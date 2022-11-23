@@ -1,0 +1,1 @@
+impact_point(x(length(t),1:end))
