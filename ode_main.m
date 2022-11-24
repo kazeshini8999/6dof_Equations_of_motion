@@ -1,12 +1,11 @@
 %% code for ode function calls
-clc
-clear
+
 % profile on
 %% intial conditions
 tspan = [0 0.6]; % event collision will detect when to stop integration, higher values lead to smoother curves
 E0 = DCM2Euler(7*pi/180,0,0,1,2,3); %intial euler parameter matrix
 r_o = transpose(DCM(2,0))*[0;0;0.41];
-x0 = [0;0;0.41;0;0;0;40.15;20.15;10.15;1;0;0;0]; %intial conditions
+x0 = postimpact; %intial conditions
 options = odeset('RelTol', 1e-9, 'AbsTol', 1e-6,'Events',@collision); %ode settings
 %% ode 45 call
 [t,x]=ode89(@(t,x) dof(t,x),tspan,x0,options); %function call

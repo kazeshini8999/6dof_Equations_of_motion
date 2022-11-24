@@ -24,8 +24,8 @@ end
 
 
 plot3(xi,yi,zi)
-%view(0,0)
-% plot(t,zdot)
+view(0,0)
+% plot(t,zdot)!
 grid on
 xlabel('x')
 ylabel('y')
