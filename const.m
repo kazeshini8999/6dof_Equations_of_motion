@@ -10,6 +10,7 @@ classdef const
         g = 9.81;
         b1 = 0;
         b2 = 0;
+        chi = -0.9
     end
 
 end
