@@ -10,9 +10,9 @@ for K = 1:size(t)
     zdt = x(6) - x(K,7)*x(K,2) + x(K,8)*x(K,1);
     R = transpose(Euler2DCM(e));
     
-    xi(K) = rc0(1);
-    yi(K) = rc0(2);
-    zi(K) = rc0(3);
+    xii(K) = rc0(1);
+    yii(K) = rc0(2);
+    zii(K) = rc0(3);
     zdot(K) = x(K,6) - x(K,7)*x(K,2) + x(K,8)*x(K,1);
     eii(K) =  x(K,10)^2 + x(K,11)^2 + x(K,12)^2 + x(K,13)^2;
 end
@@ -23,10 +23,11 @@ end
 % quat2dcm(transpose(e1))
 
 
-plot3(xi,yi,zi)
+plot3(xii,yii,zii)
 view(0,0)
 % plot(t,zdot)!
 grid on
 xlabel('x')
 ylabel('y')
+
 zlabel('z')

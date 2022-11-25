@@ -3,13 +3,13 @@
 hold on
 grid on
 
-j = length(t);
+j = 841;
 i = length(t);
 rc1 = [x(j,1);x(j,2);x(j,3)];
 e = [x(j,10);x(j,11);x(j,12);x(j,13)];
 q = quaternion(e(1),e(2),e(3),e(4));
 rc0 = transpose(Euler2DCM(e))*rc1;
-position  = [xi(j) yi(j) zi(j)]; % note the z component is scaled down by a factor of 100 to fit the coin travel and coin rotation in one plot
+position  = [xii(j) yii(j) zii(j)]; % note the z component is scaled down by a factor of 100 to fit the coin travel and coin rotation in one plot
 poseplot(q,position,"ENU",MeshFileName="cylinder1.stl",ScaleFactor=100);
 
 % rc2 = [x(i,1);x(i,2);x(i,3)];
