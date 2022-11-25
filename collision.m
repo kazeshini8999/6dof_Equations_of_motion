@@ -11,5 +11,5 @@ posO = OcC2*posC2;  % position vector of com in O frame
 
 check = posO(3) - (const.r0*sin(phi)+const.h0/2*cos(phi)); % position of coin center accounting for radius of coin
 isterminal = 1; % Do I want to stop the code when event happens, 1 for yes 0 for no
-direction = 0; % do I care from which direction the check hits 0, value of 0 means I dont care
+direction = -1; % do I care from which direction the check hits 0, value of 0 means I dont care
 end

@@ -3,8 +3,8 @@
 hold on
 grid on
 
-j = 950;
-i = 977;
+j = length(t);
+i = length(t);
 rc1 = [x(j,1);x(j,2);x(j,3)];
 e = [x(j,10);x(j,11);x(j,12);x(j,13)];
 q = quaternion(e(1),e(2),e(3),e(4));
@@ -18,7 +18,7 @@ poseplot(q,position,"ENU",MeshFileName="cylinder1.stl",ScaleFactor=100);
 % rc3 = transpose(Euler2DCM(e))*rc2;
 % position2  = [xi(i) yi(i) zi(i)];
 % poseplot(q2,position2,"ENU",MeshFileName="cylinder1.stl",ScaleFactor=100);
-% view(-180,0)
+view(90,0)
 
 axis('equal')
 hold off
