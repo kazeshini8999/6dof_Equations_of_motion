@@ -9,7 +9,7 @@ phi = acos(R1(3,3)); % angle between the k axes of the two frames
 posC2 = x(1:3); % position vector of com in C2 frame
 posO = OcC2*posC2;  % position vector of com in O frame
 
-check = posO(3) - (const.r0*sin(phi)+const.h0/2*cos(phi)); % position of coin center accounting for radius of coin
+check = posO(3) - (const.r0*abs(sin(phi))+const.h0/2*abs(cos(phi))); % position of coin center accounting for radius of coin
 isterminal = 1; % Do I want to stop the code when event happens, 1 for yes 0 for no
 direction = -1; % do I care from which direction the check hits 0, value of 0 means I dont care
 end
