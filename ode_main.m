@@ -4,10 +4,10 @@ clc
 % profile on
 %% intial conditions
 tspan = [0 0.6]; % event collision will detect when to stop integration, higher values lead to smoother curves
-E0 = DCM2Euler(7*pi/180,0,0,1,2,3); %intial euler parameter matrix
-r_o = transpose(DCM(2,0))*[0;0;0.41];
-x0 = post_impact_3;
-%x0 = [0;0;0.41;0;0;0;40.15;0;0;1;0;0;0]; %intial conditions
+E0 = DCM2Euler(7*pi/180,0,0); %intial euler parameter matrix
+r1 = (Euler2DCM(E0))*[0;0;0.41];
+x0 = post2;
+%x0 = [r1(1);r1(2);r1(3);0;0;0;40.15;0;0;E0(1);E0(2);E0(3);E0(4)]; %intial conditions
 options = odeset('RelTol', 1e-9, 'AbsTol', 1e-6,'Events',@collision); %ode settings
 %% ode 45 call
 [t,x]=ode89(@(t,x) dof(t,x),tspan,x0,options); %function call
