@@ -1,0 +1,10 @@
+syms phi(t) psi(t) 
+S = simplify(DCM(3,psi(t))*DCM(2,phi(t)));
+C = transpose(S);
+w = cross2vec(S*diff(C,t))
+simplify(w)
+C1 = subs(w,diff(phi(t), t),3)
+C2 = subs(C1,diff(psi(t), t),5)
+simplify(C2)
+
+
